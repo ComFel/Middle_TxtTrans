@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.32510.428
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextTranslatorApp", "TextTranslatorApp.vcxproj", "{2EF1F984-74AB-4990-BA7F-C0D5E0D9520B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1FDBE327-D5E3-4BEF-834B-442A7BB04323} = {1FDBE327-D5E3-4BEF-834B-442A7BB04323}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppBackend", "..\..\..\AppBackend\projects\visual-studio\AppBackend.vcxproj", "{1FDBE327-D5E3-4BEF-834B-442A7BB04323}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{2EF1F984-74AB-4990-BA7F-C0D5E0D9520B}.Debug|x64.Build.0 = Debug|x64
 		{2EF1F984-74AB-4990-BA7F-C0D5E0D9520B}.Release|x64.ActiveCfg = Release|x64
 		{2EF1F984-74AB-4990-BA7F-C0D5E0D9520B}.Release|x64.Build.0 = Release|x64
+		{1FDBE327-D5E3-4BEF-834B-442A7BB04323}.Debug|x64.ActiveCfg = Debug|x64
+		{1FDBE327-D5E3-4BEF-834B-442A7BB04323}.Debug|x64.Build.0 = Debug|x64
+		{1FDBE327-D5E3-4BEF-834B-442A7BB04323}.Release|x64.ActiveCfg = Release|x64
+		{1FDBE327-D5E3-4BEF-834B-442A7BB04323}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
