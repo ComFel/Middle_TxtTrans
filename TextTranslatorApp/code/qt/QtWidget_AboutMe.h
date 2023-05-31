@@ -8,7 +8,9 @@ class QtWidget_AboutMe : public QDialog
 	Q_OBJECT
 
 public:
-	QtWidget_AboutMe(QWidget *parent = nullptr);
+
+	QtWidget_AboutMe(QWidget *parent);
+
 	QtWidget_AboutMe();
 
 	~QtWidget_AboutMe();

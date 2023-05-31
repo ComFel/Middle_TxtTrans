@@ -1,7 +1,7 @@
 // Codigo por:
 // Felipe Vallejo Molina
 // felipevm07@gmail.com
-// 2022.6
+// 2023.6
 // Proyecto: Traductor de textoss
 #pragma once
 

@@ -33,6 +33,9 @@
     <ClInclude Include="..\..\code\headers\DataOrganizer.h">
       <Filter>Header files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\code\headers\Byte.hpp">
+      <Filter>Header files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\DocxLoader.cpp">

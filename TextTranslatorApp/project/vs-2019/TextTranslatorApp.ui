@@ -425,8 +425,17 @@
     </disabled>
    </palette>
   </property>
+  <property name="font">
+   <font>
+    <family>Consolas</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>TextTranslatorApp</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QLabel" name="LabelStatus">
@@ -441,6 +450,7 @@
     <property name="font">
      <font>
       <family>Consolas</family>
+      <pointsize>12</pointsize>
       <italic>true</italic>
      </font>
     </property>
@@ -503,10 +513,10 @@
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>790</x>
+      <x>760</x>
       <y>10</y>
-      <width>152</width>
-      <height>351</height>
+      <width>227</width>
+      <height>111</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="Lenguages_verticalLayout_2">
@@ -515,6 +525,7 @@
        <property name="font">
         <font>
          <family>Consolas</family>
+         <pointsize>12</pointsize>
          <weight>50</weight>
          <italic>true</italic>
          <bold>false</bold>
@@ -530,6 +541,7 @@
        <property name="font">
         <font>
          <family>Consolas</family>
+         <pointsize>12</pointsize>
          <weight>75</weight>
          <bold>true</bold>
          <underline>false</underline>
@@ -564,7 +576,7 @@
      <x>0</x>
      <y>0</y>
      <width>1002</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

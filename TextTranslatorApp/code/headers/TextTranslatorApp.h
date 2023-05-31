@@ -13,6 +13,7 @@
 #include <qlistwidget.h>
 #include <cstdlib>
 #include "ui_QtWidget_AboutMe.h"
+#include "..\qt\QtWidget_AboutMe.h"
 
 class TextTranslatorApp : public QMainWindow
 {
@@ -21,8 +22,10 @@ class TextTranslatorApp : public QMainWindow
 public:
     TextTranslatorApp(QWidget *parent = nullptr);
     ~TextTranslatorApp();
-private:
-    //QFile fileLoaded;
+
+private:    
+    std::unique_ptr < QtWidget_AboutMe> AboutMe;
+
 public slots:
 
     void openFile()
@@ -114,10 +117,14 @@ public slots:
 
     void createAboutWindow()
     {        
-        QDialog secDialog;
-        
-        secDialog.setModal(true);
-        secDialog.exec();
+        //QDialog secDialog;
+        //
+        //secDialog.setModal(true);
+        //secDialog.exec();
+
+        AboutMe = std::make_unique < QtWidget_AboutMe >(this);
+
+        AboutMe->setModal(true);
     }
 private:
     Ui::TextTranslatorAppClass ui;

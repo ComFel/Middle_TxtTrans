@@ -1,7 +1,7 @@
 // Codigo por:
 // Felipe Vallejo Molina
 // felipevm07@gmail.com
-// 2022.6
+// 2023.6
 // Proyecto: Traductor de textos
 
 #pragma once
@@ -29,7 +29,6 @@ namespace textTrad
 	public:
 		// Referencia al idioma que se quiera traducir
 		lengEnum myLenguage;
-
 
 		list<map<string, string>> myList;
 
@@ -87,7 +86,7 @@ namespace textTrad
 		void getLenguage(lengEnum myLeng);
 
 		// Funcion que se encarga de buscar por la lista correspondiente al idioma para buscar la traduccion correspondiente
-		string getTradfromId(string id, map<string, string> myList) {}
+		string getTradfromId(string id, map<string, string> myList);
 
 		// Devuelve toda la lista traducida
 		list<string> getTradfromLenguage(int lengEnum);

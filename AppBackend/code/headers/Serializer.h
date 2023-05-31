@@ -4,7 +4,7 @@
 // Modificaciones por
 // Felipe Vallejo Molina
 // felipevm07@gmail.com
-// 2022.6
+// 2023.6
 
 #pragma once
 
@@ -36,16 +36,16 @@ namespace textTrad
 	{
 	public:
 		
-		virtual byte   read() = 0;
-		virtual size_t read(const byte* buffer, size_t amount) = 0;
+		virtual uint8_t   read() = 0;
+		virtual size_t read(const uint8_t* buffer, size_t amount) = 0;
 	};
 
 	class Output_Stream : public Stream
 	{
 	public:
 
-		virtual void write(byte value) = 0;
-		virtual void write(const byte* buffer, size_t amount) = 0;
+		virtual void write(uint8_t value) = 0;
+		virtual void write(const uint8_t* buffer, size_t amount) = 0;
 	};
 
 	class OFStream : public Output_Stream
@@ -62,12 +62,12 @@ namespace textTrad
 		bool bad() const { return stream.bad(); }
 		bool fail() const { return stream.fail(); }
 
-		void write(byte value)
+		void write(uint8_t value)
 		{
 			stream.put(char(value));
 		}
 
-		void write(const byte* buffer, size_t amount)
+		void write(const uint8_t* buffer, size_t amount)
 		{
 			stream.write(reinterpret_cast<const char*>(buffer), amount);
 		}
@@ -86,21 +86,21 @@ namespace textTrad
 
 		void serialize_int8(const int8_t& value)
 		{
-			stream->write(reinterpret_cast<const byte&>(value));
+			stream->write(reinterpret_cast<const uint8_t&>(value));
 		}
 
 		void serialize_int16(const int16_t& value)
 		{
-			stream->write(byte(value >> 8));
-			stream->write(byte(value));
+			stream->write(uint8_t(value >> 8));
+			stream->write(uint8_t(value));
 		}
 
 		void serialize_int32(const int32_t& value)
 		{
-			stream->write(byte(value >> 24));
-			stream->write(byte(value >> 16));
-			stream->write(byte(value >> 8));
-			stream->write(byte(value));
+			stream->write(uint8_t(value >> 24));
+			stream->write(uint8_t(value >> 16));
+			stream->write(uint8_t(value >> 8));
+			stream->write(uint8_t(value));
 		}
 
 		void serialize_int64(const int64_t& value);
@@ -110,18 +110,18 @@ namespace textTrad
 		void serialize_float32(const float& value)
 		{
 			auto uint_value_32 = reinterpret_cast<const uint32_t&>(value);
-			stream->write(byte(uint_value_32 >> 24));
-			stream->write(byte(uint_value_32 >> 16));
-			stream->write(byte(uint_value_32 >> 8));
-			stream->write(byte(uint_value_32));
+			stream->write(uint8_t(uint_value_32 >> 24));
+			stream->write(uint8_t(uint_value_32 >> 16));
+			stream->write(uint8_t(uint_value_32 >> 8));
+			stream->write(uint8_t(uint_value_32));
 		}
 
 		void serialize_float64(const double& value);
 
 		void serialize_bool(bool value)
 		{
-			//stream->write (byte(value ? 1 : 0));
-			stream->write(byte(value));
+			//stream->write (uint8_t(value ? 1 : 0));
+			stream->write(uint8_t(value));
 		}
 
 		void serialize_string(const wstring& value)
@@ -136,11 +136,11 @@ namespace textTrad
 
 	private:
 
-		vector<byte> string_to_utf8(const wstring& value)
+		vector<uint8_t> string_to_utf8(const wstring& value)
 		{
-			vector<byte> result(value.size());
+			vector<uint8_t> result(value.size());
 			// NOTA: esta no es una conversión UTF8 correcta:
-			for (size_t i = 0; i < value.size(); ++i) result[i] = byte(value[i]);
+			for (size_t i = 0; i < value.size(); ++i) result[i] = uint8_t(value[i]);
 			return result;
 		}
 
