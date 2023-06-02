@@ -81,19 +81,43 @@ namespace textTrad
 			}},
 			
 		};
+
+		// Idioma -> Id -> Traduccion
+		map<lengEnum, list<map<string, string>>> lenguagesList
+		{
+			{English,{
+				{"star_button","Start Game"},
+				{"optins_button" , "Options"},
+				{"exit_button", "Exit"}
+			}},
+			{Spanish,{
+				{"star_button","Nueva Partida"},
+				{"optins_button" , "Opciones"},
+				{"exit_button", "Salir"}
+			}},
+			{French,{
+				{"star_button","NOUVEAU POSTE"},
+				{"optins_button" , "Options"},
+				{"exit_button", "Sortie"}
+			}},
+
+		};
 	
 		// Seleccionamos el idioma que queremos trabajar
 		void getLenguage(lengEnum myLeng);
+		
+		void SetLenguage(lengEnum myLeng);
 
 		// Funcion que se encarga de buscar por la lista correspondiente al idioma para buscar la traduccion correspondiente
-		string getTradfromId(string id, map<string, string> myList);
+		string getTranslationfromId(string id, map<string, string> myList);
+
+		string getTranslationfromId(const string& id);
 
 		// Devuelve toda la lista traducida
 		list<string> getTradfromLenguage(int lengEnum);
-
+		
+		list<string> getTranslationList();
 	};
-
-
 }
 
 

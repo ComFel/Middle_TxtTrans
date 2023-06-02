@@ -31,25 +31,57 @@ namespace textTrad
 		default:
 			break;
 		}
-
 	}
 
+	void Data::SetLenguage(lengEnum sel) 
+	{
+		auto iterator = lenguagesList.find(sel);
+
+		if (iterator != lenguagesList.end()) 
+		{
+			myList = iterator->second;
+		}
+	}
+
+
 	// Pasamos el id para traducir la lista
-	string Data::getTradfromId(string id, map<string, string> myList)
+	string Data::getTranslationfromId(string id, map<string, string> myList)
 	{
 		if (myList.find(id) != myList.end()) 
 		{
 			return myList[id];
 		}
-		/*
-		for (auto & caracter : myList)
-		{
-			if(caracter[id,value] == myList)
-
-		}*/
-
-		//return "Start Game";
 	}
 
+	string Data::getTranslationfromId(const string& id)
+	{
+		for(const auto& item : myList)
+		{
+			auto iterator = item.find(id);
 
+			if (iterator != item.end())
+			{
+				return iterator->second;
+			}
+		}
+
+		// Devolucion de cadena vacia si no encuentra traduccion
+		return "";
+	}
+
+	// Devolucion de la lista completa traducida
+	list<string> Data::getTranslationList()
+	{
+		list<string> translations;
+
+		for (const auto& item : myList)
+		{
+			for (const auto& value : item)
+			{
+				translations.push_back(value.second);
+			}
+		}
+
+		return translations;
+	}
 }
